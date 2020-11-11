@@ -16,7 +16,7 @@ module.exports = new Schema(
             type: String,
             required: true
         },
-        posts_id: {
+        posting_id: {
             type: Schema.Types.ObjectId,
             required: true
         },

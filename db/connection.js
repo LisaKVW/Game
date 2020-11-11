@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const connection = mongoose.connect('mongodb://localhost:27017/posts', {
+const connection = mongoose.connect('mongodb://localhost:27017/posting', {
     useNewUrlParser: true,
     useFindAndModify: true,
     useUnifiedTopology: true,

@@ -1,6 +1,4 @@
-const { Router } = require('express')
-const router = Router()
-
+const Router = require('express').Router()
 const CommentController = require('../controllers/CommentController')
 
 Router.post(
@@ -13,4 +11,4 @@ Router.put(
     '/:comment_id', CommentController.UpdateComment
 )
 
-module.exports = router
+module.exports = Router

@@ -1,9 +1,11 @@
 const { Posting, Comment } = require('../db/schema')
 
 const CreateComment = async (req, res) => {
+    console.log('CreateComment')
     try {
         const comment = new Comment({ ...req.body, user_id: req.params.user_id })
         comment.save()
+        console.log(comment)
         await Posting.update(
             { _id: req.params.post_id },
             {

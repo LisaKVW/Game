@@ -1,7 +1,7 @@
 const { User, Posting } = require('../db/schema')
 const jwt = require('jsonwebtoken')
 const {
-    checkPassWord,
+    checkPassword,
     generatePassword
 } = require('../middleware/PasswordHandler')
 
@@ -31,4 +31,41 @@ const CreateUser = async (req, res) => {
     } catch (error) {
         throw error
     }
+}
+
+//user who has profile - can sign in again
+const SignInUser = async (req, res, next) => {
+    try {
+        const user = await User.findOne({ email: req.body.email }) // find user via email
+        if (
+            user &&
+            (await checkPassword(req.body.password, user.password_digest)) // password a match of what is typed (http) and indb
+        ) {
+            const payload = {
+                _id: user._id,
+                name: user.name
+            }
+            res.locals.payload = payload
+            return next()
+        }
+        res.status(401).send({ msg: 'Unauthorized' })
+    } catch (error) {
+        throw error
+    }
+}
+
+const RefreshSession = (req, res) => {
+    try {
+        const token = res.locals.token
+        res.send({ user: jwt.decode(token), token: res.locals.token })
+    } catch (error) {
+        throw error
+    }
+}
+
+module.exports = {
+    GetProfile,
+    CreateUser,
+    SignInUser,
+    RefreshSession
 }

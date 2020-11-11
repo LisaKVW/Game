@@ -24,7 +24,7 @@ const GetPostById = async (req, res) => {
                 select: '_id name'
             },
             {
-                path: 'content',
+                path: 'comments',
                 populate: {
                     path: 'user_id',
                     model: 'users',

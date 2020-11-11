@@ -8,7 +8,7 @@ const CreateComment = async (req, res) => {
             { _id: req.params.post_id },
             {
                 $push: {
-                    content: comment
+                    comments: comment
                 }
             }
         )
@@ -24,7 +24,7 @@ const RemoveComment = async (req, res) => {
         await Comment.deleteOne({ _id: req.params.comment_id })
         const updatedPost = await Posting.findByIdAndUpdate(
             req.params.post_id,
-            { $pull: { content: { _id: req.params.content_id } } },
+            { $pull: { comments: { _id: req.params.comment_id } } },
             { upsert: true, new: true }
         )
         res.send(updatedPost)

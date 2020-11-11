@@ -7,7 +7,7 @@ module.exports = new Schema(
             required: true
         },
         content: {
-            type: String,
+            type: Schema.Types.ObjectId,
             required: true
         },
         image: {

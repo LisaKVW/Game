@@ -4,12 +4,12 @@ const PostModel = require('./models/Posting')
 const CommentModel = require('./models/Comments')
 
 const User = model('users', UserModel)
-const Post = model('posting', PostModel)
+const Posting= model('posting', PostModel)
 const Comment = model('comments', CommentModel)
 
 module.exports = {
     User,
-    Post,
+    Posting,
     Comment
 }
 

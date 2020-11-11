@@ -6,10 +6,6 @@ module.exports = new Schema(
             type: String,
             required: true
         },
-        posts_id: {
-            type: Schema.Types.ObjectId,
-            ref: 'posts'
-        },
         user_id: {
             type: Schema.Types.ObjectId,
             ref: 'users'

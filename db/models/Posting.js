@@ -3,26 +3,25 @@ const { Schema } = require('mongoose')
 module.exports = new Schema(
     {
         title_game: {
-            type: Number,
+            type: String,
             required: true
         },
-        content: {
-            type: Schema.Types.ObjectId,
+        share: {
+            type: String,
             required: true
         },
         image: {
             type: String,
-            required: true
         },
         user_id: {
             type: Schema.Types.ObjectId,
             ref: 'users'
         },
-        comments: [ 
+        comments: [
             {
-            type: Schema.Types.ObjectId,
-            ref: 'comments'
-        }
+                type: Schema.Types.ObjectId,
+                ref: 'comments'
+            }
         ]
     },
     { timestamps: true }

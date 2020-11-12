@@ -26,10 +26,11 @@ const CreateUser = async (req, res) => {
             email: body.email,
             password_digest
         })
+        console.log(user)
         user.save()
         res.send(user)
     } catch (error) {
-        throw error
+        res.json({msg: error.message })
     }
 }
 

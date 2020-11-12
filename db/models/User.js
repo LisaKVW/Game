@@ -16,13 +16,8 @@ module.exports = new Schema(
             type: String,
             required: true
         },
-        posting_id: {
-            type: Schema.Types.ObjectId,
-            required: true
-        },
         profile_image: {
             type: String,
-            required: true
         }
     },
     { timestamps: true }

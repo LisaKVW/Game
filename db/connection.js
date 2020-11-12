@@ -11,4 +11,4 @@ mongoose.set('debug', true)
 
 module.exports = connection
 
-//connection to posts? this as this will be connecting new data - and comments will be posted to posts
+//connection to posting? this as this will be connecting new data - and comments will be posted to posts

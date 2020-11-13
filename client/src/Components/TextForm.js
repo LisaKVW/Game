@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default (props) =>
+const TextForm = (props) =>
     props.fieldType === 'textfield' ? (  //ternary for a from, if true (empty textfield fill in the below)
         <textarea                       //false when autcomplete is true (as) form is filled in
             type={props.type}           //use textearea so the form shows some text in it
@@ -14,7 +14,10 @@ export default (props) =>
                 type={props.type}
                 name={props.name}
                 value={props.value}
-                onChange={props.placeholder}
+                onChange={(e) => props.onChange(e)}
+                placeholder={props.placeholder}
                 autoComplete="false"
             />
-        )   
+        )
+
+export default TextForm

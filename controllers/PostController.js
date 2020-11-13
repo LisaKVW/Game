@@ -2,14 +2,9 @@ const { Posting, User, Comment } = require('../db/schema')
 
 const GetPosts = async (req, res) => {
     try {
-        const { page, limit } = req.query
-        const offset =
-            page === '1' ? 0 : Math.floor(parseInt(page) * parseInt(limit))
-        const posts = await Posting.find()
-            .limit(parseInt(limit))
-            .skip(offset)
-            .sort({ createdAt: -1 }) 
-    } catch (error) {                   
+        const posts = await Posting.find().sort({ createdAt: -1 })
+        res.send(posts)
+    } catch (error) {
         throw error
     }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TextForm from '../Components/TextForm'
+import TextForm from '../components/TextForm'
 import { __RegisterUser } from '../services/UserService'
 
 class Signup extends Component {
@@ -28,18 +28,34 @@ class Signup extends Component {
     }
 
     render() {
-        const { name, password, email } = this.state //going set value to the mpty state
+        const { name, email, password } = this.state //going set value to the mpty state  --NEED TO ADD name and value - for next textform
         return (
-            <div classname="signup-form-holder">
+            <div className="signup-form-holder">
                 <form className="signup-form" onSubmit={this.handleSubmit}>
                     <TextForm
-                        placeholder="Your Name"
+                        placeholder="Your name"
+                        name="name"
+                        value={name}
+                        type="text"
+                        onchange={this.handleChange}
+                    />
+                    <TextForm
+                        placeholder="Your email"
                         name="email"
                         value={email}
                         type="email"
                         onchange={this.handleChange}
                     />
-                    <button>Sign Up</button>
+                    <TextForm
+                        placeholder="password"
+                        name="password"
+                        value={password}
+                        type="password"
+                        onchange={this.handleChange}
+                    />
+                    <button className="btn waves-effect waves-light indigo darken-4" type="submit" name="action">Sign Up
+                        <i className="material-icons right">send</i>
+                    </button>
                 </form>
             </div>
         )
@@ -47,3 +63,5 @@ class Signup extends Component {
 }
 
 export default Signup
+
+//needs 2 more TextForm

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import TextForm from '../Components/TextForm'
-import Services from '../services/UserService'
-
-const __RegisterUser = Services
+import { __RegisterUser } from '../services/UserService'
 
 class Signup extends Component {
     constructor() {

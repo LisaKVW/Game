@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import SignUp from '../pages/SignUp'
+import LandingPage from '../pages/LandingPage'
 
 class Router extends Component {
     constructor() {

@@ -12,19 +12,20 @@ class Signup extends Component {
         }
     }
 
+    handleChange = ({ target }) => {
+        console.log(this.state)
+        this.setState({ [target.name]: target.value })
+        console.log(this.state)
+    }
+
     handleSubmit = async (event) => {
-        event.preventDedault()
+        event.preventDefault()
         try {
             await __RegisterUser(this.state)
             this.props.history.push('/login')
         } catch (error) {
             console.log(error)
         }
-    }
-
-    handleChange = ({ target }) => {
-        this.setState({ [target.name]: target.value })
-        console.log(this.state)
     }
 
     render() {
@@ -37,23 +38,23 @@ class Signup extends Component {
                         name="name"
                         value={name}
                         type="text"
-                        onchange={this.handleChange}
+                        onChange={this.handleChange}
                     />
                     <TextForm
                         placeholder="Your email"
                         name="email"
                         value={email}
                         type="email"
-                        onchange={this.handleChange}
+                        onChange={this.handleChange}
                     />
                     <TextForm
                         placeholder="password"
                         name="password"
                         value={password}
                         type="password"
-                        onchange={this.handleChange}
+                        onChange={this.handleChange}
                     />
-                    <button className="btn waves-effect waves-light indigo darken-4" type="submit" name="action">Sign Up
+                    <button className="btn waves-effect waves-light indigo darken-4">Sign Up
                         <i className="material-icons right">send</i>
                     </button>
                 </form>
@@ -64,4 +65,3 @@ class Signup extends Component {
 
 export default Signup
 
-//needs 2 more TextForm

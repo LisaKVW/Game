@@ -8,7 +8,7 @@ const Nav = (props) => {
         <Link to="/" className="brand-logo center" ><i className="left material-icons">games</i> Game Insider</Link>
         <ul className="right">
           <li><Link to="/register"> Sign Up</Link></li>
-          <li><Link to="#!">Second Sidebar a</Link></li>
+          <li><Link to="/login">Sign in </Link></li>
         </ul>
       </div>
 

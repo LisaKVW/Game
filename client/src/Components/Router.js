@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import SignUp from '../pages/SignUp'
+import SignIn from '../pages/SignIn'
 import LandingPage from '../pages/LandingPage'
 // import { __CheckSession } from '../services/UserService'
 // import Feed from '../pages/Feed'
@@ -17,11 +18,6 @@ class Router extends Component {
         }
     }
 
-    componentDidMount() {
-        //checking for token -so user is signed-in and can post/comment
-        // this.verifyTokenValid()
-        this.setState({ pageLoading: false })
-    }
 
     // verifyTokenValid = async () => {
     //     const token = localStorage.getItem('token')
@@ -43,9 +39,15 @@ class Router extends Component {
     //     }
     // }
 
-    // toggleAuthenticated = (value, user, done) => {
-    //     this.setState({ authenticated: value, currentUser: user }, () => done())
-    // }
+    toggleAuthenticated = (value, user, done) => {
+        this.setState({ authenticated: value, currentUser: user }, () => done())
+    }
+
+    componentDidMount() {
+        //checking for token -so user is signed-in and can post/comment
+        // this.verifyTokenValid()
+        this.setState({ pageLoading: false })
+    }
 
     render() {
         console.log(this.state.pageLoading)
@@ -71,6 +73,18 @@ class Router extends Component {
                                     </LandingPage>
                                 )}
                             />
+                            <Route
+                            path="/login"
+                            component={(props)=> (
+                                <LandingPage>
+                                    <SignIn
+                                    toggleAuthenticated={this.toggleAuthenticated}
+                                    {...props}
+                                    />
+                                </LandingPage>
+                            )}
+                            />
+                            )
                         </Switch>
                     )
                 }

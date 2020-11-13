@@ -24,14 +24,17 @@ const CreateComment = async (req, res) => {
 const RemoveComment = async (req, res) => {
     try {
         await Comment.deleteOne({ _id: req.params.comment_id })
-        const updatedPost = await Posting.findByIdAndUpdate(
-            req.params.post_id,
-            { $pull: { comments: { _id: req.params.comment_id } } },
-            { upsert: true, new: true }
+        await GamePost.findOneAndUpdate(
+            { _id: req.params.post_id },
+            { $pull: { comments: req.params.comment_id } },
+            { upsert: true, new: true },
+            (err, updatedPost) => {
+                if (err) { console.log(err) }
+                res.send(updatedPost)
+            }
         )
-        res.send(updatedPost)
-    } catch (error) {
-        throw error
+    } catch (err) {
+        throw err
     }
 }
 

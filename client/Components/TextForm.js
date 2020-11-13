@@ -6,15 +6,15 @@ export default (props) =>
             type={props.type}           //use textearea so the form shows some text in it
             name={props.name}
             value={props.value}
-            onChange={(e) => props.onChange(e)}
+            onChange={(e) => props.onChange(e)} //onChane needed to handle change(update) form
             placeholder={props.placeholder}
         />
     ) : (
             <input      //update form based on the input
-            type={props.type}
-            name={props.name}
-            value={props.value}
-            onChange={props.placeholder}
-            autoComplete="false"
+                type={props.type}
+                name={props.name}
+                value={props.value}
+                onChange={props.placeholder}
+                autoComplete="false"
             />
         )   

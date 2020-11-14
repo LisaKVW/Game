@@ -9,6 +9,8 @@ const Nav = (props) => {
         <ul className="right">
           <li><Link to="/register"> Sign Up</Link></li>
           <li><Link to="/login">Sign in </Link></li>
+          <li><Link to="/FeedRead"> Game Chat </Link></li>
+          <li><Link to="/GameReads"> Game Reads </Link></li>
         </ul>
       </div>
 

@@ -19,20 +19,20 @@ export const __RegisterUser = async (formData) => {
     }
 }
 
-export const __LoginUser = async (userData) => {
+export const __CheckSession = async () => {
     try {
-        const res = await ApiClient.post('/users/login', userData)
-        localStorage.setItem('token', res.data.token)
+        const res = await ApiClient.get('/users/refresh/session')
+        console.log(res.data)
         return res.data
     } catch (error) {
         throw error
     }
 }
 
-export const __CheckSession = async () => {
+export const __LoginUser = async (userData) => {
     try {
-        const res = await ApiClient.get('/users/refresh/session')
-        console.log(res.data)
+        const res = await ApiClient.post('/users/login', userData)
+        localStorage.setItem('token', res.data.token)
         return res.data
     } catch (error) {
         throw error

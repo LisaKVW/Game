@@ -17,7 +17,7 @@ class Signin extends Component {
       const loginData = await __LoginUser(this.state)
       console.log(loginData)
       this.props.toggleAuthenticated(true, loginData.user, () =>
-        this.props.history.push('/feed')
+        this.props.history.push('/feedCreate')
       )
     } catch (error) {
       this.setState({ formError: true })

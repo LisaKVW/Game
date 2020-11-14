@@ -42,13 +42,20 @@ const CreatePost = async (req, res) => {
     }
 }
 
+
 const DeletePost = async (req, res) => {
     try {
-        await Comment.deleteMany({ _id: { $in: post.comments } })
-        await Posting.findByIdAndDelete(req.params.post_id)
-        res.send({ msg: 'Post deleted' })
-    } catch (error) {
-        throw error
+        await Comment.deleteMany({ _id: req.params.post_id })
+        await Posting.findOneAndDelete(
+            { _id: req.params.post_id },
+            { upsert: false, new: false }, //upsert must equal false when deleting
+            (err, deletedPost) => {
+                if (err) { console.log(err) }
+                res.send(deletedPost)
+            }
+        )
+    } catch (err) {
+        throw err
     }
 }
 
@@ -59,8 +66,8 @@ const UpdatePost = async (req, res) => {
             {
                 ...req.body
             },
-            { new: true, useFindAndModify: false },
-            (err, (d) => (err ? err : res.send(d)))
+            { new: true, useFindAndModify: false }
+            // (error, (d) => (error ? error : res.send(d)))
         )
     } catch (error) {
         throw error

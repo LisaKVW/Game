@@ -24,7 +24,7 @@ const CreateComment = async (req, res) => {
 const RemoveComment = async (req, res) => {
     try {
         await Comment.deleteOne({ _id: req.params.comment_id })
-        await GamePost.findOneAndUpdate(
+        await Posting.findOneAndUpdate(
             { _id: req.params.post_id },
             { $pull: { comments: req.params.comment_id } },
             { upsert: true, new: true },

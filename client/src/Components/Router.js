@@ -3,8 +3,8 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 import SignUp from '../pages/SignUp'
 import SignIn from '../pages/SignIn'
 import LandingPage from '../pages/LandingPage'
-// import { __CheckSession } from '../services/UserService'
-// import Feed from '../pages/Feed'
+import { __CheckSession } from '../services/UserService'
+import Feed from '../pages/Feed'
 import Home from '../pages/Home'
 
 
@@ -19,25 +19,25 @@ class Router extends Component {
     }
 
 
-    // verifyTokenValid = async () => {
-    //     const token = localStorage.getItem('token')
-    //     if (token) {
-    //         try {
-    //             const session = await __CheckSession()
-    //             console.log('session', session)
-    //             this.setState(
-    //                 {
-    //                     currentUser: session.user,
-    //                     authenticated: true
-    //                 },
-    //                 () => this.props.history.push('/feed')
-    //             )
-    //         } catch (error) {
-    //             this.setState({ currentUser: null, authenticated: false })
-    //             localStorage.clear()
-    //         }
-    //     }
-    // }
+    verifyTokenValid = async () => {
+        const token = localStorage.getItem('token')
+        if (token) {
+            try {
+                const session = await __CheckSession()
+                console.log('session', session)
+                this.setState(
+                    {
+                        currentUser: session.user,
+                        authenticated: true
+                    },
+                    () => this.props.history.push('/feed')
+                )
+            } catch (error) {
+                this.setState({ currentUser: null, authenticated: false })
+                localStorage.clear()
+            }
+        }
+    }
 
     toggleAuthenticated = (value, user, done) => {
         this.setState({ authenticated: value, currentUser: user }, () => done())
@@ -74,15 +74,21 @@ class Router extends Component {
                                 )}
                             />
                             <Route
-                            path="/login"
-                            component={(props)=> (
-                                <LandingPage>
-                                    <SignIn
-                                    toggleAuthenticated={this.toggleAuthenticated}
-                                    {...props}
-                                    />
-                                </LandingPage>
-                            )}
+                                path="/login"
+                                component={(props) => (
+                                    <LandingPage>
+                                        <SignIn
+                                            toggleAuthenticated={this.toggleAuthenticated}
+                                            {...props}
+                                        />
+                                    </LandingPage>
+                                )}
+                            />
+                            <Route
+                                path="/feed"
+                                component={(props) => (
+                                    <Feed />
+                                )}
                             />
                             )
                         </Switch>

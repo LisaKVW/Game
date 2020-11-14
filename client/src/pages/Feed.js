@@ -18,3 +18,5 @@ class Feed extends Component {
 }
 
 export default Feed
+
+//title_game - share - image(optional, userid, commentid)

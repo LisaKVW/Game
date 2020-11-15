@@ -9,22 +9,13 @@ class GameReads extends Component {
   constructor() {
     super()
     this.state = {
-      genres: [],
+      upcoming: [],
       searchQuery: '',
       searchResults: [],
       searched: false
     }
   }
 
-  // componentDidMount() {
-  //   this.getGenres()  //we did this to show the genres immediatly. We got the info from the APi and in
-  // } //  componentDidMount() is loading it and showing our genres - as we are in a class its this.
-
-  // getGenres = async () => {
-  //   const res = await Axios.get('https://api.rawg.io/api/genres')
-  //   console.log(res.data.results) //console log this- cause now we know that .results gives all the genres
-  //   this.setState({ genres: res.data.results })
-  // }
 
   getSearchResults = async (event) => {
     event.preventDefault()

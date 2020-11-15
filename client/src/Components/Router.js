@@ -79,8 +79,8 @@ class Router extends Component {
                             <Route
                                 path="/login"
                                 component={(props) => (
-                                    <LandingPage>
-                                        <SignIn
+                                    <LandingPage {...props}>
+                                        <SignIn {...props}
                                             toggleAuthenticated={this.toggleAuthenticated}
                                             {...props}
                                         />
@@ -90,16 +90,16 @@ class Router extends Component {
                             <Route
                                 path="/feedCreate"
                                 component={(props) => (
-                                    <LandingPage>
-                                        <FeedCreate />
+                                    <LandingPage {...props}>
+                                        <FeedCreate {...props} />
                                     </LandingPage>
                                 )}
                             />
                             <Route
                                 path="/feedRead"
                                 component={(props) => (
-                                    <LandingPage>
-                                        <FeedRead
+                                    <LandingPage {...props}>
+                                        <FeedRead {...props}
                                             currentUser={this.state.currentUser}
                                             authenticated={this.state.authenticated}
                                         />

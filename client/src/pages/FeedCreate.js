@@ -21,6 +21,7 @@ class FeedCreate extends Component {
         try {
             await __UploadPost(this.state, this.props.user_id)
             this.props.history.push('/feedRead')
+            console.log(this.props.history)
         } catch (error) {
             console.log(error)
         }

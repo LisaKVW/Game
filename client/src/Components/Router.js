@@ -97,11 +97,10 @@ class Router extends Component {
                             <Route
                                 path="/feedRead"
                                 component={(props) => (
-                                    <LandingPage>
-                                        <FeedRead
-                                            currentUser={this.state.currentUser}
-                                            authenticated={this.state.authenticated}
-                                        />
+                                    <LandingPage
+                                        currentUser={this.state.currentUser}
+                                        authenticated={this.state.authenticated}
+                                    >
                                     </LandingPage>
                                 )}
                             />

@@ -19,7 +19,7 @@ class FeedCreate extends Component {
     handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await __UploadPost(this.state, this.props.currentUser._id)
+            await __UploadPost(this.state, this.props.user_id)
             this.props.history.push('/feedRead')
         } catch (error) {
             console.log(error)

@@ -37,7 +37,7 @@ class Router extends Component {
                         authenticated: true,
                         pageLoading: true
                     },
-                    () => this.props.history.push('/feedRead')
+                    () => this.props.history.push('/feedCreate')
                 )
             } catch (error) {
                 this.setState({ currentUser: null, authenticated: false })

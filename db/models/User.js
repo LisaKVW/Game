@@ -15,9 +15,6 @@ module.exports = new Schema(
         password_digest: {
             type: String,
             required: true
-        },
-        profile_image: {
-            type: String,
         }
     },
     { timestamps: true }

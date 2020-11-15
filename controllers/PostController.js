@@ -1,4 +1,4 @@
-const { Posting, User, Comment } = require('../db/schema')
+const { Posting, Comment } = require('../db/schema')
 
 const GetPosts = async (req, res) => {
     try {
@@ -32,15 +32,15 @@ const GetPostById = async (req, res) => {
     }
 }
 
-const CreatePost = async (req, res) => {
-    try {
-        const newPost = new Posting({ ...req.body, user_id: req.params.user_id })
-        newPost.save()
-        res.send(newPost)
-    } catch (error) {
-        throw error
-    }
-}
+// const CreatePost = async (req, res) => {
+//     try {
+//         const newPost = new Posting({ ...req.body, user_id: req.params.user_id })
+//         newPost.save()
+//         res.send(newPost)
+//     } catch (error) {
+//         throw error
+//     }
+// }
 
 
 const DeletePost = async (req, res) => {
@@ -74,10 +74,23 @@ const UpdatePost = async (req, res) => {
     }
 }
 
+const AddPost = async (request, response) => {
+    try {
+        const addNew = await new Posting(request.body)
+        addNew.save()
+        return response.status(201).json({
+            addNew,
+        });
+    } catch (error) {
+        return response.status(500).json({ error: error.message })
+    }
+}
+
 module.exports = {
     GetPosts,
     GetPostById,
-    CreatePost,
+    // CreatePost,
     DeletePost,
-    UpdatePost
+    UpdatePost,
+    AddPost
 }

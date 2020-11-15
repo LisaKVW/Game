@@ -8,8 +8,7 @@ class FeedCreate extends Component {
         this.state = {
             title_game: '',
             share: '',
-            image: '',
-            user_id: null
+            image: ''
         }
     }
 
@@ -22,9 +21,9 @@ class FeedCreate extends Component {
     handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await __UploadPost(this.state, this.props.user_id)
+            await __UploadPost(this.state)
             console.log('uploadpost', __UploadPost)
-            console.log('user_id', this.props.user_id)
+            // console.log('user_id', this.props.user_id)
             this.props.history.push('/feedRead')
             console.log('history', this.props.history)
             console.log('push', this.props.history.push)

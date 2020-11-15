@@ -3,9 +3,11 @@ const PostController = require('../controllers/PostController')
 
 Router.get('/', PostController.GetPosts)
 Router.get('/:post_id', PostController.GetPostById)
-Router.post('/:user_id', PostController.CreatePost)
+// Router.post('/:user_id', PostController.CreatePost)
 Router.put('/:post_id', PostController.UpdatePost)
 Router.delete('/:post_id', PostController.DeletePost)
+
+Router.post('/add', PostController.AddPost)
 
 module.exports = Router
 
@@ -17,3 +19,7 @@ module.exports = Router
 
 //DELETE: http://localhost:3003/api/posts/5faf22c03fde744aa2835c53
 //api/posts/post_id
+
+//using this is in front:
+//Router.post('/add', PostController.AddPost)
+//  posts/add - no id needed!!!!

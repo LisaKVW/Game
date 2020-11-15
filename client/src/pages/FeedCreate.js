@@ -9,19 +9,25 @@ class FeedCreate extends Component {
             title_game: '',
             share: '',
             image: '',
+            user_id: null
         }
     }
 
     handleChange = ({ target }) => {
         this.setState({ [target.name]: target.value })
+        console.log('setState', this.setState)
+        console.log('target', ({ [target.name]: target.value }))
     }
 
     handleSubmit = async (e) => {
         e.preventDefault()
         try {
             await __UploadPost(this.state, this.props.user_id)
+            console.log('uploadpost', __UploadPost)
+            console.log('user_id', this.props.user_id)
             this.props.history.push('/feedRead')
-            console.log(this.props.history)
+            console.log('history', this.props.history)
+            console.log('push', this.props.history.push)
         } catch (error) {
             console.log(error)
         }

@@ -80,7 +80,7 @@ class Router extends Component {
                                 path="/login"
                                 component={(props) => (
                                     <LandingPage {...props}>
-                                        <SignIn {...props}
+                                        <SignIn
                                             toggleAuthenticated={this.toggleAuthenticated}
                                             {...props}
                                         />

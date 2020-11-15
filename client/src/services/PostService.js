@@ -18,14 +18,14 @@ export const __GetPosts = async (page, limit) => {
     }
 }
 
-export const __GetPost = async (postId) => {
-    try {
-        const res = await ApiClient.get(`/posts/${postId}`)
-        return res.data
-    } catch (error) {
-        throw error
-    }
-}
+// export const __GetPost = async (postId) => {
+//     try {
+//         const res = await ApiClient.get(`/posts/${postId}`)
+//         return res.data
+//     } catch (error) {
+//         throw error
+//     }
+// }  no need to get one post
 
 export const __UpdatePost = async (formData, postId) => {
     try {

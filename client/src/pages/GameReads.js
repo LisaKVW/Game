@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import TextForm from '../components/TextForm'
-import ShowSearchGame from '../components/ShowSearchGame'
+// import ShowSearchGame from '../components/ShowSearchGame'
 
 
 class GameReads extends Component {

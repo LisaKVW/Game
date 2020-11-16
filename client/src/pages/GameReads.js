@@ -25,7 +25,6 @@ class GameReads extends Component {
     console.log(res.data.results) //this so we know what info to grab
     this.setState({
       searchResults: res.data.results,
-      searched: true,  //this is a toggle
       searchQuery: ''  //what you are actually searching- this will clear your search results
     })
   }
@@ -42,14 +41,18 @@ class GameReads extends Component {
           value={this.state.searchQuery}
           onSubmit={this.getSearchResults}
         />
-        <button className="btn waves-effect waves-light indigo darken-4" type="submit" name="action"> Search game
-                        <i className="material-icons right">send</i>
+        <h3> Search results: </h3>
+        <button className="btn waves-effect waves-light indigo darken-4"
+        > Search game
+        <i className="material-icons right">send</i>
         </button>
+        
       </div>
     )
   }
 }
 export default GameReads
+
 
 //          onClick= {this.state.searchResults.map((result) => (
 // key = { result.id }

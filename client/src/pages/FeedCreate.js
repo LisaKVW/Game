@@ -6,9 +6,12 @@ class FeedCreate extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title_game: '',
+            title_game: this.props.gameName,
+            api_id: this.props.gameApiId,
             share: '',
-            image: ''
+            image: this.props.gameImage,
+            user_id: this.props.currentUser,
+            post_title:''
         }
     }
 
@@ -20,12 +23,12 @@ class FeedCreate extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault()
+        console.log('upload', this.state)
+        console.log('history', this.props)
         try {
             await __UploadPost(this.state)
-            console.log('uploadpost', __UploadPost)
             // console.log('user_id', this.props.user_id)
             this.props.history.push('/feedRead')
-            console.log('history', this.props.history)
             console.log('push', this.props.history.push)
         } catch (error) {
             console.log(error)
@@ -34,26 +37,21 @@ class FeedCreate extends Component {
 
 
     render() {
-        const { title_game, share, image } = this.state   //as user_id is a ref do I have to add it in the render?
+        console.log('fromfeedcreate props:', this.props)
+        const { post_title, share, } = this.state   //as user_id is a ref do I have to add it in the render?
         return (
             <div className="upload content">
                 <form className="feed-create" onSubmit={this.handleSubmit}>
-                    <TextForm
-                        placeholder="Title game"
-                        name="title_game"
-                        value={title_game}
-                        onChange={this.handleChange}
+                    <TextForm 
+                    placeholder="post title"
+                    name="post_title"
+                    value={post_title}
+                    onChange={this.handleChange}
                     />
                     <TextForm
                         placeholder="share your game thought(s)"
                         name="share"
                         value={share}
-                        onChange={this.handleChange}
-                    />
-                    <TextForm
-                        placeholder="Image url"
-                        name="image"
-                        value={image}
                         onChange={this.handleChange}
                     />
                     <button className="btn waves-effect waves-light indigo darken-4" name="action" >Submit post

@@ -1,14 +1,18 @@
 import React from 'react'
 import Nav from '../components/Nav'
 
-const LandingPage = ({ children }) => {
+
+const LandingPage = (props) => {
+    console.log(props)
     return (
         <div className="App">
             <header>
-                <Nav />
+                <Nav authenticated={props.authenticated} 
+                    currentUser={props.currentUser}
+                />
             </header>
             <section>
-                {children}
+                {props.children}
             </section>
         </div>
     )

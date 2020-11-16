@@ -16,8 +16,16 @@ class GameCard extends Component {
           </div>
         </div>
         <div>
+          {/* add ternary for currentuser - if not user - cant see text input drill props */}
           <h1> Posts </h1>
-          <FeedCreate gameName GameApiId gameImage />
+          <FeedCreate
+            {...this.props}
+            gameName={this.props.game.name}
+            gameApiId={this.props.game.id}
+            gameImage={this.props.game.background_image} 
+            authenticated={this.props.authenticated}
+            currentUser={this.props.currentUser}
+            />
         </div>
       </div>
     )

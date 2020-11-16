@@ -38,7 +38,7 @@ class AllGames extends Component {
 
 
   render() {
-    console.log('genres: ', this.state.genres)
+    console.log(this.props)
     let genreCards = this.state.genres.map((genre, index) => {
       return (
         <div className="col s12 m4" key={index} >
@@ -65,7 +65,11 @@ class AllGames extends Component {
     return (
       <div>
         { this.state.game !== null ?
-          <GameCard game={this.state.game} />
+          <GameCard {...this.props}
+            game={this.state.game}
+            authenticated={this.props.authenticated}
+            currentUser={this.props.currentUser}
+          />
           :
           <div>
             <h2> All Games </h2>

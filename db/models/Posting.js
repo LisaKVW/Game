@@ -13,10 +13,17 @@ module.exports = new Schema(
         image: {
             type: String,
         },
-        // user_id: {
-        //     type: Schema.Types.ObjectId,
-        //     ref: 'users'
-        // },
+        user_id: {
+            type: Schema.Types.ObjectId,
+            ref: 'users'
+        },
+        api_id: {
+            type: Number
+        },
+        post_title: {
+            type: String,
+            required: true
+        },
         comments: [
             {
                 type: Schema.Types.ObjectId,

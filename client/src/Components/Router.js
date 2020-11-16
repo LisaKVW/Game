@@ -8,7 +8,6 @@ import FeedCreate from '../pages/FeedCreate'
 import FeedRead from '../pages/FeedRead'
 import Home from '../pages/Home'
 import UpdatePost from '../pages/UpdatePost'
-import GameReads from '../pages/GameReads'
 import AllGames from '../pages/AllGames'
 
 
@@ -50,7 +49,7 @@ class Router extends Component {
 
     toggleAuthenticated = (value, user, done) => {
         this.setState({ authenticated: value, currentUser: user }, () => done())
-        console.log('the state', this.setState)
+        console.log('the state', this.state)
     }
 
 
@@ -61,78 +60,66 @@ class Router extends Component {
                 { this.state.pageLoading ?
                     (<h3>Loading...</h3>
                     ) : (
-                        <Switch>
-                            <Route
-                                exact path="/"
-                                component={() => (
-                                    <LandingPage>
+                        <LandingPage {...this.props}
+                            authenticated={this.state.authenticated}
+                            currentUser={this.state.currentUser}
+                        >
+                            <Switch>
+                                <Route
+                                    exact path="/"
+                                    component={(props) => (
                                         <Home />
-                                    </LandingPage>
-                                )}
-                            />
-                            <Route
-                                path="/register"
-                                component={(props) => (
-                                    <LandingPage>
+                                    )}
+                                />
+                                <Route
+                                    path="/register"
+                                    component={(props) => (
                                         <SignUp {...props} />
-                                    </LandingPage>
-                                )}
-                            />
-                            <Route
-                                path="/login"
-                                component={(props) => (
-                                    <LandingPage {...props}>
+                                    )}
+                                />
+                                <Route
+                                    path="/login"
+                                    component={(props) => (
                                         <SignIn
                                             toggleAuthenticated={this.toggleAuthenticated}
                                             {...props}
                                         />
-                                    </LandingPage>
-                                )}
-                            />
-                            <Route
-                                path="/feedCreate"
-                                component={(props) => (
-                                    <LandingPage {...props}>
+                                    )}
+                                />
+                                <Route
+                                    path="/feedCreate"
+                                    component={(props) => (
                                         <FeedCreate {...props} />
-                                    </LandingPage>
-                                )}
-                            />
-                            <Route
-                                path="/feedRead"
-                                component={(props) => (
-                                    <LandingPage {...props}>
+                                    )}
+                                />
+                                <Route
+                                    path="/feedRead"
+                                    component={(props) => (
                                         <FeedRead {...props}
                                             currentUser={this.state.currentUser}
                                             authenticated={this.state.authenticated}
                                         />
-                                    </LandingPage>
-                                )}
-                            />
-                            <Route
-                                path='/GameReads'
-                                component={(props) => (
-                                    <LandingPage {...props}>
-                                        <GameReads />
-                                    </LandingPage>
-                                )}
-                            />
-                            <Route
-                                path='/update'
-                                component={(props) => (
-                                    <LandingPage {...props}>
+                                    )}
+                                />
+                                <Route
+                                    path='/update'
+                                    component={(props) => (
                                         <UpdatePost  {...props} />
-                                    </LandingPage>
-                                )}
-                            />
-                            <Route
+
+                                    )}
+                                />
+                                <Route
                                 path='/allgames'
                                 component={(props) => (
-                                    <LandingPage {...props}>
-                                        <AllGames {...props} />
-                                    </LandingPage>
+                                    <AllGames {...props}
+                                    currentUser={this.state.currentUser}
+                                    authenticated={this.state.authenticated}
+                                    />
+                                  
                                 )}
-                            />
+                                />
                         </Switch>
+                        </LandingPage>
                     )
                 }
             </main >

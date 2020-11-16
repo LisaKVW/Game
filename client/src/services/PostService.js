@@ -10,8 +10,8 @@ import ApiClient from './ApiClient'
 // }
 
 
-// this the AddNew
-export const __UploadPost = async (formData, userId) => {
+// this the AddNew - used in feedCreate
+export const __UploadPost = async (formData) => {
     try {
         const res = await ApiClient.post('/posts/add', formData)
         return res.data
@@ -20,7 +20,7 @@ export const __UploadPost = async (formData, userId) => {
     }
 }
 
-export const __GetPosts = async (page, limit) => {
+export const __GetPosts = async (page) => {
     try {
         const res = await ApiClient.get(`/posts`)
         return res.data

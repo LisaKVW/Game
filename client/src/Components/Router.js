@@ -7,7 +7,9 @@ import { __CheckSession } from '../services/UserService'
 import FeedCreate from '../pages/FeedCreate'
 import FeedRead from '../pages/FeedRead'
 import Home from '../pages/Home'
+import UpdatePost from '../pages/UpdatePost'
 import GameReads from '../pages/GameReads'
+import AllGames from '../pages/AllGames'
 
 
 class Router extends Component {
@@ -109,7 +111,25 @@ class Router extends Component {
                             <Route
                                 path='/GameReads'
                                 component={(props) => (
-                                    <GameReads />
+                                    <LandingPage {...props}>
+                                        <GameReads />
+                                    </LandingPage>
+                                )}
+                            />
+                            <Route
+                                path='/update'
+                                component={(props) => (
+                                    <LandingPage {...props}>
+                                        <UpdatePost  {...props} />
+                                    </LandingPage>
+                                )}
+                            />
+                            <Route
+                                path='/allgames'
+                                component={(props) => (
+                                    <LandingPage {...props}>
+                                        <AllGames {...props} />
+                                    </LandingPage>
                                 )}
                             />
                         </Switch>

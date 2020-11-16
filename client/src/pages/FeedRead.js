@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { __GetPosts } from '../services/PostService';
 import { __DeletePost } from '../services/PostService'
-// import UpdatePost from '../pages/UpdatePost'
+import UpdatePost from '../pages/UpdatePost'
 // //will need post and delete comment to - 
 
 
@@ -42,21 +42,40 @@ class FeedRead extends Component {
         {posts.length ? (
           posts.map((posts) => (
             <div>
-              <h4> {posts.title_game} </h4>
-              <p>  {posts.share} </p>
-              <p>  {posts.image} </p>
-              <button className="btn waves-effect waves-light indigo darken-4"
-                onClick={() => this.getDelete(posts._id)} type="submit" name="action"
-              > Delete post
-                <i className="material-icons right">send</i>
-              </button>
+              <div class="row">
+                <div class="col s12 m7">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src={posts.image} />
+                      <span class="card-title"> {posts.title_game} </span>
+                    </div>
+                    <div class="card-content">
+                      <p> {posts.share} </p>
+                    </div>
+                    <div class="card-action">
+                      <button className="btn waves-effect waves-light indigo darken-4"
+                        onClick={() => this.getDelete(posts._id)} type="submit" name="action"
+                      > Delete post
+                   <i className="material-icons right">send</i>
+                      </button>
 
-              <button className="btn waves-effect waves-light red lighten-1"
-                type="submit" name="action"
-              > Update post
-                <i className="material-icons right">send</i>
-              </button>
 
+                      <a class='dropdown-trigger btn' data-target='dropdown1'>Drop Me!</a>
+
+
+                      <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">one</a></li>
+                        <li><a href="#!">two</a></li>
+                        <li class="divider" tabindex="-1"></li>
+                        <li><a href="#!">three</a></li>
+                        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+                      </ul>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           ))
         ) : (
@@ -69,3 +88,18 @@ class FeedRead extends Component {
 }
 
 export default FeedRead
+
+  // < h4 > { posts.title_game } </h4 >
+  //             <p>  {posts.share} </p>
+  //             <p>  {posts.image} </p>
+  //             <button className="btn waves-effect waves-light indigo darken-4"
+  //               onClick={() => this.getDelete(posts._id)} type="submit" name="action"
+  //             > Delete post
+  //               <i className="material-icons right">send</i>
+  //             </button>
+
+  //             <button className="btn waves-effect waves-light red lighten-1"
+  //               type="submit" name="action" onClick={() => this.props.history.push('/update')}
+  //             > Update post
+  //               <i className="material-icons right">send</i>
+  //             </button>

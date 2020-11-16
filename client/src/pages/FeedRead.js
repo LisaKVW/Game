@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { __GetPosts } from '../services/PostService';
 import { __DeletePost } from '../services/PostService'
-// import { __UpdatePost} from '../services/PostService'
+// import UpdatePost from '../pages/UpdatePost'
 // //will need post and delete comment to - 
 
 
@@ -42,15 +42,21 @@ class FeedRead extends Component {
         {posts.length ? (
           posts.map((posts) => (
             <div>
-              <h2> {posts.title_game} </h2>
+              <h4> {posts.title_game} </h4>
               <p>  {posts.share} </p>
               <p>  {posts.image} </p>
               <button className="btn waves-effect waves-light indigo darken-4"
                 onClick={() => this.getDelete(posts._id)} type="submit" name="action"
               > Delete post
                 <i className="material-icons right">send</i>
-                console.log()
               </button>
+
+              <button className="btn waves-effect waves-light red lighten-1"
+                type="submit" name="action"
+              > Update post
+                <i className="material-icons right">send</i>
+              </button>
+
             </div>
           ))
         ) : (

@@ -102,11 +102,13 @@ class Router extends Component {
                                         />
                                     )}
                                 />
-                                <Route
+                                <ProtectedRoute
                                     path='/update'
                                     component={(props) => (
-                                        <UpdatePost  {...props} />
-
+                                        <UpdatePost  {...props}
+                                        currentUser={this.state.currentUser}
+                                        authenticated={this.state.authenticated}
+                                        />
                                     )}
                                 />
                                 <Route
@@ -119,7 +121,7 @@ class Router extends Component {
 
                                     )}
                                 />
-                                <Route
+                                <ProtectedRoute
                                     path='/updatePost'
                                     component={(props) => (
                                         <UpdatePost {...props}

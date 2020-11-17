@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { __GetPosts } from '../services/PostService';
 import { __DeletePost } from '../services/PostService'
 import UpdatePost from '../pages/UpdatePost'
-import CommentCreate from '../pages/CommentCreate'
+
 
 class FeedRead extends Component {
   constructor() {
@@ -59,8 +59,6 @@ class FeedRead extends Component {
                       <i className="material-icons right">send</i>
                       </button>
                       <UpdatePost {...this.props} id={posts._id} />
-                      <CommentCreate {...this.props} />
-                      
                     </div>
                   </div>
                 </div>

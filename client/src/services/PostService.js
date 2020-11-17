@@ -24,7 +24,6 @@ export const __UploadPost = async (formData) => {
 export const __GetPosts = async (page) => {
     try {
         const res = await ApiClient.get(`/posts`)
-        console.log('LOOK HERE', res.data)
         return res.data
     } catch (error) {
         throw error
@@ -38,7 +37,7 @@ export const __GetPostById = async (postId) => {
     } catch (error) {
         throw error
     }
-} 
+}
 
 export const __UpdatePost = async (formData, postId) => {
     try {

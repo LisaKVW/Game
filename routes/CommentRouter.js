@@ -2,7 +2,7 @@ const Router = require('express').Router()
 const CommentController = require('../controllers/CommentController')
 
 Router.post(
-    '/', CommentController.CreateComment
+    '/add', CommentController.CreateComment
 )
 Router.delete(
     '/:post_id/remove/:comment_id', CommentController.RemoveComment
@@ -10,6 +10,8 @@ Router.delete(
 Router.put(
     '/:comment_id', CommentController.UpdateComment
 )
+
+Router.get('/', CommentController.GetComments)
 
 module.exports = Router
 

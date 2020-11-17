@@ -11,7 +11,7 @@ class FeedCreate extends Component {
             share: '',
             image: this.props.gameImage,
             user_id: this.props.currentUser,
-            post_title: ''
+            post_title: '',
         }
     }
 

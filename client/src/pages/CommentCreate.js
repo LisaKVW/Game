@@ -37,7 +37,7 @@ class CommentCreate extends Component {
         {/* <div className="col s12 m6"> */}
         <div className="card blue-grey darken-1">
           <div className="card-content white-text">
-            <span className="card-title"> Speak your dirty (game) mind: </span>
+            <span className="card-title"> Game Chat: </span>
             <p>
               <form className="feed-create" onSubmit={this.handleSubmit}>
                 <TextForm

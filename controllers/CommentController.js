@@ -1,25 +1,16 @@
 const { Posting, Comment } = require('../db/schema')
 
-const CreateComment = async (req, res) => {
-    console.log('CreateComment')
+const CreateComment = async (request, response) => {
     try {
-        const comment = new Comment({ ...req.body, user_id: req.params.user_id })
-        comment.save()
-        console.log(comment)
-        await Posting.update(
-            { _id: req.params.post_id },
-            {
-                $push: {
-                    comments: comment
-                }
-            }
-        )
-        res.send(comment)
+        const addComment = await new Comment(request.body)
+        addComment.save()
+        return response.status(201).json({
+            addComment,
+        });
     } catch (error) {
-        throw error
+        return response.status(500).json({ error: error.message })
     }
 }
-
 
 const RemoveComment = async (req, res) => {
     try {
@@ -51,8 +42,18 @@ const UpdateComment = async (req, res) => {
     }
 }
 
+const GetComments = async (req, res) => {
+    try {
+        const comments = await Comment.find().sort({ createdAt: -1 })
+        res.send(comments)
+    } catch (error) {
+        throw error
+    }
+}
+
 module.exports = {
     CreateComment,
     RemoveComment,
-    UpdateComment
+    UpdateComment,
+    GetComments
 }

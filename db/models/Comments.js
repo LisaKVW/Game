@@ -2,10 +2,11 @@ const { Schema } = require('mongoose')
 
 module.exports = new Schema(
     {
-        comment: {
+        comment:[ {
             type: String,
             required: true
         }
+    ]
     },
     { timestamps: true }
 )

@@ -22,14 +22,7 @@ module.exports = new Schema(
         },
         post_title: {
             type: String,
-            required: true
-        },
-        comments: [
-            {
-                type: Schema.Types.ObjectId,
-                ref: 'comments'
-            }
-        ]
+        }
     },
     { timestamps: true }
 )

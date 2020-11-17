@@ -37,10 +37,10 @@ const CreateUser = async (req, res) => {
 //user who has profile - can sign in again
 const SignInUser = async (req, res, next) => {
     try {
-        const user = await User.findOne({ email: req.body.email }) // find user via email
+        const user = await User.findOne({ email: req.body.email }) 
         if (
             user &&
-            (await checkPassword(req.body.password, user.password_digest)) // password a match of what is typed (http) and indb
+            (await checkPassword(req.body.password, user.password_digest)) 
         ) {
             const payload = {
                 _id: user._id,

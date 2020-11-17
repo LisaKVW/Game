@@ -1,14 +1,5 @@
 import ApiClient from './ApiClient'
 
-// export const __GetProfile = async (userId) => {
-//     try {
-//         const res = await ApiClient.get(`/users/${userId}`)
-//         return res.data
-//     } catch (error) {
-//         throw error
-//     }
-// }   - not going to make profile page i thnk
-
 //create new user
 export const __RegisterUser = async (formData) => {
     try {

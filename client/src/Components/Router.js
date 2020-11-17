@@ -9,7 +9,7 @@ import FeedRead from '../pages/FeedRead'
 import Home from '../pages/Home'
 import UpdatePost from '../pages/UpdatePost'
 import AllGames from '../pages/AllGames'
-
+import ProtectedRoute from '../components/ProtectedRoute'
 
 
 class Router extends Component {

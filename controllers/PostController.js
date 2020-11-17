@@ -69,6 +69,7 @@ const UpdatePost = async (req, res) => {
             { new: true, useFindAndModify: false }
             // (error, (d) => (error ? error : res.send(d)))
         )
+        res.send('updated')
     } catch (error) {
         throw error
     }

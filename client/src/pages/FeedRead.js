@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { __GetPosts } from '../services/PostService';
 import { __DeletePost } from '../services/PostService'
+// import { __UpdatePost } from '../services/PostService'
 import UpdatePost from '../pages/UpdatePost'
 // //will need post and delete comment to - 
 
@@ -33,8 +34,18 @@ class FeedRead extends Component {
     }
   }
 
+  // getUpdate = async (e) => {
+  //   e.prevenDefault()
+  //   try {
+  //     await __UpdatePost(this.state, this.props.match.params.post_id)
+  //     this.props.history.push('/feedCreate')
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
-  render() {
+
+  render(props) {
     const { posts } = this.state
     return (
       <div>
@@ -56,21 +67,14 @@ class FeedRead extends Component {
                       <button className="btn waves-effect waves-light indigo darken-4"
                         onClick={() => this.getDelete(posts._id)} type="submit" name="action"
                       > Delete post
-                   <i className="material-icons right">send</i>
+                      <i className="material-icons right">send</i>
                       </button>
-
-
-                      <a class='dropdown-trigger btn' data-target='dropdown1'>Drop Me!</a>
-
-
-                      <ul id='dropdown1' class='dropdown-content'>
-                        <li><a href="#!">one</a></li>
-                        <li><a href="#!">two</a></li>
-                        <li class="divider" tabindex="-1"></li>
-                        <li><a href="#!">three</a></li>
-                        <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                        <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-                      </ul>
+                      <UpdatePost {...this.props} id={posts._id} />
+                      {/* <button className="btn waves-effect waves-light cyan darken-1"
+                        onClick={() => this.getUpdate(posts._id )} type="submit" 
+                      > Update post
+                   <i className="material-icons right">send</i>
+                      </button> */}
 
                     </div>
                   </div>

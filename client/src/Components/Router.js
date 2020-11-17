@@ -9,6 +9,7 @@ import FeedRead from '../pages/FeedRead'
 import Home from '../pages/Home'
 import UpdatePost from '../pages/UpdatePost'
 import AllGames from '../pages/AllGames'
+// import UpdateWrite from '../pages/UpdateWrite'
 
 
 class Router extends Component {
@@ -109,16 +110,25 @@ class Router extends Component {
                                     )}
                                 />
                                 <Route
-                                path='/allgames'
-                                component={(props) => (
-                                    <AllGames {...props}
-                                    currentUser={this.state.currentUser}
-                                    authenticated={this.state.authenticated}
-                                    />
-                                  
-                                )}
+                                    path='/allgames'
+                                    component={(props) => (
+                                        <AllGames {...props}
+                                            currentUser={this.state.currentUser}
+                                            authenticated={this.state.authenticated}
+                                        />
+
+                                    )}
                                 />
-                        </Switch>
+                                <Route
+                                    path='/updatePost'
+                                    component={(props) => (
+                                        <UpdatePost {...props}
+                                            currentUser={this.state.currentUser}
+                                            authenticated={this.state.authenticated}
+                                        />
+                                    )}
+                                />
+                            </Switch>
                         </LandingPage>
                     )
                 }

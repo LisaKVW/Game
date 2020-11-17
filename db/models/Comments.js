@@ -6,9 +6,9 @@ module.exports = new Schema(
             type: String,
             required: true
         },
-        user_id: {
+        post_id: {
             type: Schema.Types.ObjectId,
-            ref: 'users'
+            ref: 'posting'
         }
     },
     { timestamps: true }

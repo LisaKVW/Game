@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { __GetPosts } from '../services/PostService';
 import { __DeletePost } from '../services/PostService'
-// import { __UpdatePost } from '../services/PostService'
 import UpdatePost from '../pages/UpdatePost'
 // //will need post and delete comment to - 
-
 
 class FeedRead extends Component {
   constructor() {
@@ -34,16 +32,6 @@ class FeedRead extends Component {
     }
   }
 
-  // getUpdate = async (e) => {
-  //   e.prevenDefault()
-  //   try {
-  //     await __UpdatePost(this.state, this.props.match.params.post_id)
-  //     this.props.history.push('/feedCreate')
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
 
   render(props) {
     const { posts } = this.state
@@ -70,11 +58,6 @@ class FeedRead extends Component {
                       <i className="material-icons right">send</i>
                       </button>
                       <UpdatePost {...this.props} id={posts._id} />
-                      {/* <button className="btn waves-effect waves-light cyan darken-1"
-                        onClick={() => this.getUpdate(posts._id )} type="submit" 
-                      > Update post
-                   <i className="material-icons right">send</i>
-                      </button> */}
 
                     </div>
                   </div>

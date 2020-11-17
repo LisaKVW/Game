@@ -2,7 +2,7 @@ const Router = require('express').Router()
 const CommentController = require('../controllers/CommentController')
 
 Router.post(
-    '/:post_id', CommentController.CreateComment
+    '/', CommentController.CreateComment
 )
 Router.delete(
     '/:post_id/remove/:comment_id', CommentController.RemoveComment

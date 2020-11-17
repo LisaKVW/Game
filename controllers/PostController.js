@@ -11,6 +11,7 @@ const GetPosts = async (req, res) => {
 
 const GetPostById = async (req, res) => {
     try {
+        
         const post = await Posting.findById(req.params.post_id).populate([
             {
                 model: 'users',
@@ -95,3 +96,6 @@ module.exports = {
     UpdatePost,
     AddPost
 }
+
+
+

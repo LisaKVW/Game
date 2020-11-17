@@ -60,6 +60,7 @@ class FeedRead extends Component {
                       </button>
                       <UpdatePost {...this.props} id={posts._id} />
                       <CommentCreate {...this.props} />
+                      
                     </div>
                   </div>
                 </div>

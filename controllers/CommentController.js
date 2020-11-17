@@ -14,14 +14,13 @@ const CreateComment = async (request, response) => {
 
 const RemoveComment = async (req, res) => {
     try {
-        await Comment.deleteOne({ _id: req.params.comment_id })
-        await Posting.findOneAndUpdate(
-            { _id: req.params.post_id },
-            { $pull: { comments: req.params.comment_id } },
-            { upsert: true, new: true },
-            (err, updatedPost) => {
+        await Comment.deleteMany({ _id: req.params.comment_id })
+        await Posting.findOneAndDelete(
+            { _id: req.params.comment_id },
+            { upsert: false, new: false }, //upsert must equal false when deleting
+            (err, removeComment) => {
                 if (err) { console.log(err) }
-                res.send(updatedPost)
+                res.send(removeComment)
             }
         )
     } catch (err) {

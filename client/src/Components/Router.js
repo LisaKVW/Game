@@ -12,6 +12,7 @@ import AllGames from '../pages/AllGames'
 import ProtectedRoute from '../components/ProtectedRoute'
 
 
+
 class Router extends Component {
     constructor() {
         super()
@@ -106,8 +107,8 @@ class Router extends Component {
                                     path='/update'
                                     component={(props) => (
                                         <UpdatePost  {...props}
-                                        currentUser={this.state.currentUser}
-                                        authenticated={this.state.authenticated}
+                                            currentUser={this.state.currentUser}
+                                            authenticated={this.state.authenticated}
                                         />
                                     )}
                                 />

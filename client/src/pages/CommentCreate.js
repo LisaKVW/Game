@@ -6,7 +6,7 @@ class CommentCreate extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      comment: ''
+      comments: ''
     }
   }
 
@@ -23,7 +23,7 @@ class CommentCreate extends Component {
     try {
       await __CreateComment(this.state)
       // console.log('user_id', this.props.user_id)
-      this.props.history.push('/feedRead')
+      this.props.history.push('/commentRead')
       console.log('push', this.props.history.push)
     } catch (error) {
       console.log(error)
@@ -46,7 +46,7 @@ class CommentCreate extends Component {
                   value={comment}
                   onChange={this.handleChange}
                 />
-                <button className="btn waves-effect waves-light indigo darken-4" name="action" > Comment
+                <button className="btn waves-effect waves-light red darken-2" name="action" > Chat
                          <i className="material-icons right">send</i>
                 </button>
               </form>

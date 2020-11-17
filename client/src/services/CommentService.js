@@ -18,3 +18,12 @@ export const __GetComments = async (page) => {
     throw error
   }
 }
+
+export const __RemoveComment = async (commentId) => {
+  try {
+    const res = await ApiClient.delete(`/comments/${commentId}`)
+    return res
+  } catch (error) {
+    throw error
+  }
+}

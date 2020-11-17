@@ -10,4 +10,3 @@ Router.use('/posts', PostingRouter)
 
 module.exports = Router
 
-//as we have 3 schema's - breaking down all routes in3 - and bringing them together ain AppRouter

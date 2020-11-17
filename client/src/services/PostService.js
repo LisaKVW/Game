@@ -1,5 +1,15 @@
 import ApiClient from './ApiClient'
 
+// export const __UploadPost = async (formData, userId) => {
+//     try {
+//         const res = await ApiClient.post(`/posts/${userId}`, formData)
+//         return res.data
+//     } catch (error) {
+//         throw error
+//     }
+// }
+
+
 // this the AddNew - used in feedCreate
 export const __UploadPost = async (formData) => {
     console.log(formData)

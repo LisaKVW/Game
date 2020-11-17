@@ -11,7 +11,7 @@ const GetPosts = async (req, res) => {
 
 const GetPostById = async (req, res) => {
     try {
-
+        
         const post = await Posting.findById(req.params.post_id).populate([
             {
                 model: 'users',
@@ -32,6 +32,17 @@ const GetPostById = async (req, res) => {
         throw error
     }
 }
+
+// const CreatePost = async (req, res) => {
+//     try {
+//         const newPost = new Posting({ ...req.body, user_id: req.params.user_id })
+//         newPost.save()
+//         res.send(newPost)
+//     } catch (error) {
+//         throw error
+//     }
+// }
+
 
 const DeletePost = async (req, res) => {
     try {
@@ -57,6 +68,7 @@ const UpdatePost = async (req, res) => {
                 ...req.body
             },
             { new: true, useFindAndModify: false }
+            // (error, (d) => (error ? error : res.send(d)))
         )
         res.send('updated')
     } catch (error) {
@@ -79,6 +91,7 @@ const AddPost = async (request, response) => {
 module.exports = {
     GetPosts,
     GetPostById,
+    // CreatePost,
     DeletePost,
     UpdatePost,
     AddPost

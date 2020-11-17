@@ -11,7 +11,7 @@ class FeedCreate extends Component {
             share: '',
             image: this.props.gameImage,
             user_id: this.props.currentUser,
-            post_title:''
+            post_title: ''
         }
     }
 
@@ -42,11 +42,11 @@ class FeedCreate extends Component {
         return (
             <div className="upload content">
                 <form className="feed-create" onSubmit={this.handleSubmit}>
-                    <TextForm 
-                    placeholder="post title"
-                    name="post_title"
-                    value={post_title}
-                    onChange={this.handleChange}
+                    <TextForm
+                        placeholder="post title"
+                        name="post_title"
+                        value={post_title}
+                        onChange={this.handleChange}
                     />
                     <TextForm
                         placeholder="share your game thought(s)"

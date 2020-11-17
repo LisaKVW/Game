@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import TextForm from '../components/TextForm'
 import { __CreateComment } from '../services/CommentService'
 
-class FeedCreate extends Component {
+class CommentCreate extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      comment: this.props.gameName,
-      post_id: this.props.currentUser,
-     
+      comment: ''
     }
   }
 
@@ -23,7 +21,7 @@ class FeedCreate extends Component {
     console.log('upload', this.state)
     console.log('history', this.props)
     try {
-      await __UploadPost(this.state)
+      await __CreateComment(this.state)
       // console.log('user_id', this.props.user_id)
       this.props.history.push('/feedRead')
       console.log('push', this.props.history.push)
@@ -32,32 +30,54 @@ class FeedCreate extends Component {
     }
   }
 
-
   render() {
-    console.log('fromfeedcreate props:', this.props)
-    const { post_title, share, } = this.state   //as user_id is a ref do I have to add it in the render?
+    const { comment } = this.state
     return (
-      <div className="upload content">
-        <form className="feed-create" onSubmit={this.handleSubmit}>
-          <TextForm
-            placeholder="post title"
-            name="post_title"
-            value={post_title}
-            onChange={this.handleChange}
-          />
-          <TextForm
-            placeholder="share your game thought(s)"
-            name="share"
-            value={share}
-            onChange={this.handleChange}
-          />
-          <button className="btn waves-effect waves-light indigo darken-4" name="action" >Submit post
-                        <i className="material-icons right">send</i>
-          </button>
-        </form>
-      </div>
+      <div className="row" >
+        {/* <div className="col s12 m6"> */}
+        <div className="card blue-grey darken-1">
+          <div className="card-content white-text">
+            <span className="card-title"> Comments: </span>
+            <p>
+              <form className="feed-create" onSubmit={this.handleSubmit}>
+                <TextForm
+                  placeholder="enter your comment here"
+                  name="comment"
+                  value={comment}
+                  onChange={this.handleChange}
+                />
+                <button className="btn waves-effect waves-light indigo darken-4" name="action" > Comment
+                         <i className="material-icons right">send</i>
+                </button>
+              </form>
+            </p>
+          </div>
+          {/* </div> */}
+        </div>
+      </div >
     )
   }
 }
+export default CommentCreate
 
-export default FeedCreate
+
+//   render() {
+//     console.log('fromfeedcreate props:', this.props)
+//     const { comment } = this.state   //as user_id is a ref do I have to add it in the render?
+//     return (
+//       <div className="upload content">
+//         <form className="feed-create" onSubmit={this.handleSubmit}>
+//           <TextForm
+//             placeholder="comment"
+//             name="comment"
+//             value={comment}
+//             onChange={this.handleChange}
+//           />
+//           <button className="btn waves-effect waves-light indigo darken-4" name="action" > Comment
+//                         <i className="material-icons right">send</i>
+//           </button>
+//         </form>
+//       </div>
+//     )
+//   }
+// }

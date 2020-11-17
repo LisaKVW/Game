@@ -5,7 +5,7 @@ Router.post(
     '/add', CommentController.CreateComment
 )
 Router.delete(
-    '/:post_id/remove/:comment_id', CommentController.RemoveComment
+    '/:comment_id', CommentController.RemoveComment
 )
 Router.put(
     '/:comment_id', CommentController.UpdateComment

@@ -22,8 +22,9 @@ class CommentRead extends Component{
   }
 
   getDelete = async (id) => {
+    console.log('delete comment', this.state.comments)
     try {
-      const keepComment = this.state.posts.filter((comment) => comment._id !== id)
+      const keepComment = this.state.comments.filter((comment) => comment._id !== id)
       this.setState({ comments: keepComment })
       await __RemoveComment(id)
     } catch (error) {
@@ -47,7 +48,7 @@ class CommentRead extends Component{
                       <p> {comments.comment}</p>
                        <button className="btn waves-effect waves-light indigo darken-4"
                         onClick={() => this.getDelete(comments._id)} type="submit" name="action"
-                        > Remove Comment
+                        > Remove chat
                         <i className="material-icons right">send</i>
                 </button>
                   </div>

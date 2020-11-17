@@ -23,7 +23,7 @@ class CommentCreate extends Component {
     try {
       await __CreateComment(this.state)
       // console.log('user_id', this.props.user_id)
-      this.props.history.push('/commentRead')
+      this.props.history.push('/feedRead')
       console.log('push', this.props.history.push)
     } catch (error) {
       console.log(error)

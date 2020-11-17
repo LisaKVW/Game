@@ -41,6 +41,7 @@ class FeedRead extends Component {
     return (
       <div>
         <h2> Lets talk games </h2>
+        <h4> Find your posts on your games and chat with fellow gamers </h4>
         {posts.length ? (
           posts.map((posts) => (
             <div>

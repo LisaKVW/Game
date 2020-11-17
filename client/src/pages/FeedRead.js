@@ -42,38 +42,40 @@ class FeedRead extends Component {
       <div>
         <h2> Lets talk games </h2>
         <h4> Find your posts on your games and chat with fellow gamers </h4>
-        {posts.length ? (
-          posts.map((posts) => (
-            <div>
-              <div class="row">
-                <div class="col s12 m7">
-                  <div class="card">
-                    <div class="card-image">
-                      <img src={posts.image} />
-                      <span class="card-title"> {posts.title_game} </span>
+          {posts.length ? (
+          <div className="row">
+            <div className="col s6">
+              {posts.map((posts) => (
+            
+                    <div class="card">
+                      <div class="card-image">
+                        <img src={posts.image} />
+                        <span class="card-title"> {posts.title_game} </span>
+                      </div>
+                      <div class="card-content">
+                        <p> {posts.share} </p>
+                      </div>
+                      <div class="card-action">
+                        <button className="btn waves-effect waves-light indigo darken-4"
+                          onClick={() => this.getDelete(posts._id)} type="submit" name="action"
+                        > Delete post
+                        <i className="material-icons right">send</i>
+                        </button>
+                        <UpdatePost {...this.props} id={posts._id} />
+                      </div>
                     </div>
-                    <div class="card-content">
-                      <p> {posts.share} </p>
-                    </div>
-                    <div class="card-action">
-                      <button className="btn waves-effect waves-light indigo darken-4"
-                        onClick={() => this.getDelete(posts._id)} type="submit" name="action"
-                      > Delete post
-                      <i className="material-icons right">send</i>
-                      </button>
-                      <UpdatePost {...this.props} id={posts._id} />
-                      <CommentCreate {...this.props} />
-                      <CommentRead {...this.props} />
-                    </div>
+            
+            ))}
+                  </div>
+                  <div className="col s6">
+
+                    <CommentCreate {...this.props} />
                   </div>
                 </div>
-              </div>
-            </div>
-          ))
-        ) : (
-            <h3> No game posts today, sorry 👾 </h3>
-          )
-        }
+            ) : (
+              <h3> No game posts today, sorry 👾 </h3>
+              )
+            }
       </div>
     )
   }

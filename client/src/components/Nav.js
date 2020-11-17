@@ -10,7 +10,7 @@ const Nav = (props) => {
           <ul className="right">
             <li><Link to="/allGames"> Browse Games </Link></li>
             <li><Link to="/feedRead" > Game Chat </Link></li>
-            <li> Sign out </li>
+            <li onClick={()=> props.toggleAuthenticated(false, null, ()=> props.history.push('/')) }> Sign out </li>
           </ul>
           :
           <ul className="right">

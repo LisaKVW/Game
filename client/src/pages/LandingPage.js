@@ -7,8 +7,9 @@ const LandingPage = (props) => {
     return (
         <div className="App">
             <header>
-                <Nav authenticated={props.authenticated} 
+                <Nav {...props} authenticated={props.authenticated} 
                     currentUser={props.currentUser}
+                    toggleAuthenticated={props.toggleAuthenticated}
                 />
             </header>
             <section>

@@ -37,24 +37,15 @@ class CommentRead extends Component{
     console.log('render comments', comments)
     return (
       <div>
-        <h2> Lets talk games </h2>
         {comments.length ? (
           comments.map((comments) => (
-            // <div className="row" diplay="inline-block" >
-            //   <div className="col s12 m6">
-                <div className="card blue-grey darken-1">
-                  <div className="card-content white-text">
-                    <span className="card-title"> Comments: </span>
-                      <p> {comments.comment}</p>
-                       <button className="btn waves-effect waves-light indigo darken-4"
-                        onClick={() => this.getDelete(comments._id)} type="submit" name="action"
-                        > Remove chat
-                        <i className="material-icons right">send</i>
-                </button>
-                  </div>
-                </div>
-            //   </div>
-            // </div>
+            <div>
+              <h5> {comments.comment}</h5>
+              <button className="btn small waves-effect waves-light indigo darken-4"
+                onClick={() => this.getDelete(comments._id)} type="submit" name="action"
+              ><i className="material-icons ">delete</i>
+              </button>
+            </div>   
           ))
         ) : (
             <h3> No chat today, sorry 👾 </h3>

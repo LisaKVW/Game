@@ -65,6 +65,7 @@ class Router extends Component {
                         <LandingPage {...this.props}
                             authenticated={this.state.authenticated}
                             currentUser={this.state.currentUser}
+                            toggleAuthenticated={this.toggleAuthenticated}
                         >
                             <Switch>
                                 <Route
@@ -88,27 +89,28 @@ class Router extends Component {
                                         />
                                     )}
                                 />
-                                <Route
+                                <ProtectedRoute
+                                    authenticated={this.state.authenticated}
                                     path="/feedCreate"
                                     component={(props) => (
                                         <FeedCreate {...props} />
                                     )}
                                 />
-                                <Route
+                                <ProtectedRoute
+                                    authenticated={this.state.authenticated}
                                     path="/feedRead"
                                     component={(props) => (
                                         <FeedRead {...props}
                                             currentUser={this.state.currentUser}
-                                            authenticated={this.state.authenticated}
                                         />
                                     )}
                                 />
                                 <ProtectedRoute
+                                    authenticated={this.state.authenticated}
                                     path='/update'
                                     component={(props) => (
                                         <UpdatePost  {...props}
                                             currentUser={this.state.currentUser}
-                                            authenticated={this.state.authenticated}
                                         />
                                     )}
                                 />
@@ -123,11 +125,11 @@ class Router extends Component {
                                     )}
                                 />
                                 <ProtectedRoute
+                                    authenticated={this.state.authenticated}
                                     path='/updatePost'
                                     component={(props) => (
                                         <UpdatePost {...props}
                                             currentUser={this.state.currentUser}
-                                            authenticated={this.state.authenticated}
                                         />
                                     )}
                                 />

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TextForm from '../components/TextForm'
 import { __CreateComment } from '../services/CommentService'
+import CommentRead from '../pages/CommentRead'
 
 class CommentCreate extends Component {
   constructor(props) {
@@ -33,8 +34,6 @@ class CommentCreate extends Component {
   render() {
     const { comment } = this.state
     return (
-      <div className="row" >
-        {/* <div className="col s12 m6"> */}
         <div className="card blue-grey darken-1">
           <div className="card-content white-text">
             <span className="card-title"> Game Chat: </span>
@@ -51,9 +50,8 @@ class CommentCreate extends Component {
                 </button>
               </form>
             </p>
+          <CommentRead {...this.props} />
           </div>
-          {/* </div> */}
-        </div>
       </div >
     )
   }

@@ -1,6 +1,8 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
+const MONGO_URI = process.env.MONGO_URI 
 
-const connection = mongoose.connect('mongodb://localhost:27017/Game-Insider', {
+const connection = mongoose.connect(process.env.NODE_ENV === 'production' ? MONGO_URI : 'mongodb://localhost:27017/Game-Insider', {
     useNewUrlParser: true,
     useFindAndModify: true,
     useUnifiedTopology: true,
@@ -11,4 +13,3 @@ mongoose.set('debug', true)
 
 module.exports = connection
 
-//connection to posting? this as this will be connecting new data - and comments will be posted to posts

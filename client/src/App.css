@@ -6,3 +6,7 @@
 .authBtn {
   margin: 0 5px;
 }
+
+li:hover {
+cursor: pointer;
+}

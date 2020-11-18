@@ -10,10 +10,8 @@ const Home = (props) => {
     }}>
       <header >
       </header>
+      <br/>
       <main>
-        <h2>
-          Game Insider - read and chat games
-        </h2>
         <Link to="/register">
           <button className="btn waves-effect waves-light indigo darken-4 authBtn" type="submit" name="action">Sign Up
             <i className="material-icons right">send</i>

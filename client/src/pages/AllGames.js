@@ -24,7 +24,7 @@ class AllGames extends Component {
       throw error
     }
   }
-
+  // find game by genre
   findGame = async (gameId) => {
     console.log(gameId)
     try {
@@ -35,7 +35,6 @@ class AllGames extends Component {
       throw error
     }
   }
-
 
   render() {
     console.log(this.props)
@@ -72,7 +71,7 @@ class AllGames extends Component {
           />
           :
           <div>
-            <h2> All Games </h2>
+            <h4> Current top 6 - Games by genre </h4>
             <div className="row ">
               {genreCards}
             </div>

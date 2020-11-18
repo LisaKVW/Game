@@ -38,7 +38,7 @@ class FeedCreate extends Component {
 
     render() {
         console.log('fromfeedcreate props:', this.props)
-        const { post_title, share, } = this.state   //as user_id is a ref do I have to add it in the render?
+        const { post_title, share, } = this.state   
         return (
             <div className="upload content">
                 <form className="feed-create" onSubmit={this.handleSubmit}>

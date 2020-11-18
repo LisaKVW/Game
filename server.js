@@ -21,7 +21,6 @@ app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 // Initialize Middleware
 app.disable('X-Powered-By')
-app.get('/', (req, res) => res.send({ msg: 'Server Working - home route' }))
 app.use('/api', AppRouter)
 app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))

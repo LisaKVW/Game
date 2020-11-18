@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import CommentCreate from './CommentCreate'
 import { __GetComments } from '../services/CommentService'
 import { __RemoveComment } from '../services/CommentService'
 

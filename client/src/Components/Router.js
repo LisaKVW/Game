@@ -23,9 +23,7 @@ class Router extends Component {
         }
     }
     componentDidMount() {
-        //checking for token -so user is signed-in and can post/comment
         this.verifyTokenValid()
-        // this.setState({ pageLoading: false })    // note by default is false - so no need
     }
 
     verifyTokenValid = async () => {

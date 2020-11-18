@@ -58,24 +58,3 @@ class CommentCreate extends Component {
 }
 export default CommentCreate
 
-
-//   render() {
-//     console.log('fromfeedcreate props:', this.props)
-//     const { comment } = this.state   //as user_id is a ref do I have to add it in the render?
-//     return (
-//       <div className="upload content">
-//         <form className="feed-create" onSubmit={this.handleSubmit}>
-//           <TextForm
-//             placeholder="comment"
-//             name="comment"
-//             value={comment}
-//             onChange={this.handleChange}
-//           />
-//           <button className="btn waves-effect waves-light indigo darken-4" name="action" > Comment
-//                         <i className="material-icons right">send</i>
-//           </button>
-//         </form>
-//       </div>
-//     )
-//   }
-// }

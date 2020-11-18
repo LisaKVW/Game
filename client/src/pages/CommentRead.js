@@ -47,7 +47,7 @@ class CommentRead extends Component{
             </div>   
           ))
         ) : (
-            <h3> No chat today, sorry 👾 </h3>
+            <h5> No chat today, sorry 👾 </h5>
           )
         }
       </div>

@@ -40,7 +40,7 @@ class CommentCreate extends Component {
             <p>
               <form className="feed-create" onSubmit={this.handleSubmit}>
                 <TextForm
-                  placeholder="enter your comment here"
+                  placeholder="What's on your mind?"
                   name="comment"
                   value={comment}
                   onChange={this.handleChange}

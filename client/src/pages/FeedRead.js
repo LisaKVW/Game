@@ -3,7 +3,6 @@ import { __GetPosts } from '../services/PostService';
 import { __DeletePost } from '../services/PostService'
 import UpdatePost from '../pages/UpdatePost'
 import CommentCreate from '../pages/CommentCreate'
-import CommentRead from '../pages/CommentRead'
 
 
 class FeedRead extends Component {

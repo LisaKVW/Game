@@ -13,6 +13,7 @@ export default class SearchGames extends Component {
     }
   }
 
+
   getSearchResults = async (event) => {
     event.preventDefault()
     const res = await Axios.get(

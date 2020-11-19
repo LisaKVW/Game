@@ -8,9 +8,10 @@ const Nav = (props) => {
         <Link to="/" className="brand-logo center" ><i className="left material-icons">games</i> Game Insider</Link>
         {props.currentUser && props.authenticated ?
           <ul className="right">
-            <li><Link to="/allGames"> Browse Games </Link></li>
+            <li><Link to="/allGames"> Browse Games by genre </Link></li>
             <li><Link to="/feedRead" > Game Chat </Link></li>
-            <li onClick={()=> props.toggleAuthenticated(false, null, ()=> props.history.push('/')) }> Sign out </li>
+            <li><Link to="/searchGames" > Search Games </Link></li>
+            <li onClick={() => props.toggleAuthenticated(false, null, () => props.history.push('/'))}> Sign out </li>
           </ul>
           :
           <ul className="right">

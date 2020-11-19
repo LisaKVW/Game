@@ -10,3 +10,10 @@
 li:hover {
 cursor: pointer;
 }
+
+.center-cols > .col {
+  float:none; 
+  display: inline-block;
+  text-align: initial; 
+}
+

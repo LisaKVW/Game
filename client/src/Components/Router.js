@@ -10,6 +10,7 @@ import Home from '../pages/Home'
 import UpdatePost from '../pages/UpdatePost'
 import AllGames from '../pages/AllGames'
 import ProtectedRoute from '../components/ProtectedRoute'
+import SearchGames from '../pages/SearchGames'
 
 
 
@@ -116,6 +117,16 @@ class Router extends Component {
                                     path='/allgames'
                                     component={(props) => (
                                         <AllGames {...props}
+                                            currentUser={this.state.currentUser}
+                                            authenticated={this.state.authenticated}
+                                        />
+
+                                    )}
+                                />
+                                <Route
+                                    path='/searchGames'
+                                    component={(props) => (
+                                        <SearchGames {...props}
                                             currentUser={this.state.currentUser}
                                             authenticated={this.state.authenticated}
                                         />

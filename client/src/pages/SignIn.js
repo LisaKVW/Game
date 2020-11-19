@@ -32,7 +32,11 @@ class Signin extends Component {
   render() {
     const { email, password } = this.state
     return (
-      <div className="signin-form-holder">
+      <div className="signin-form-holder"
+          style={{
+            backgroundImage: "url('https://images.pexels.com/photos/1365795/pexels-photo-1365795.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260')",
+          backgroundSize: "cover", minHeight: "91vh", paddingTop: "5vh"
+        }}>
         <form className="signin-form" onSubmit={this.handleSubmit}>
           <TextForm
             placeholder="Your email"

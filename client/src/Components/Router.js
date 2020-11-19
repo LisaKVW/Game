@@ -9,7 +9,7 @@ import FeedRead from '../pages/FeedRead'
 import Home from '../pages/Home'
 import UpdatePost from '../pages/UpdatePost'
 import AllGames from '../pages/AllGames'
-import ProtectedRoute from '../components/ProtectedRoute'
+import ProtectedRoute from '../Components/ProtectedRoute'
 import SearchGames from '../pages/SearchGames'
 
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TextForm from '../components/TextForm'
+import TextForm from '../Components/TextForm'
 import { __UpdatePost } from '../services/PostService'
 import { __GetPostById } from '../services/PostService'
 

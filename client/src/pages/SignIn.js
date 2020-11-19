@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TextForm from '../components/TextForm'
+import TextForm from '../Components/TextForm'
 import { __LoginUser } from '../services/UserService'
 
 class Signin extends Component {

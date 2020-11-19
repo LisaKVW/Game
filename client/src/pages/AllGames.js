@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios'
-import GameCard from '../components/GameCard'
+import GameCard from '../Components/GameCard'
 
 class AllGames extends Component {
   constructor() {

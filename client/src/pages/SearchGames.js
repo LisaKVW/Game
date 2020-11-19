@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import SearchForm from '../components/SearchForm'
+import SearchForm from '../Components/SearchForm'
 import Axios from 'axios'
-import SearchCard from '../components/SearchCard'
+import SearchCard from '../Components/SearchCard'
 
 export default class SearchGames extends Component {
   constructor(props) {

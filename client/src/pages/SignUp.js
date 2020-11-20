@@ -31,7 +31,11 @@ class Signup extends Component {
     render() {
         const { name, email, password } = this.state //going set value to the mpty state  --NEED TO ADD name and value - for next textform
         return (
-            <div className="signup-form-holder">
+            <div className="signup-form-holder"
+                style={{
+                    backgroundImage: "url('https://images.pexels.com/photos/4523016/pexels-photo-4523016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')",
+                    backgroundSize: "cover", minHeight: "91vh", paddingTop: "5vh"
+                }}>
                 <form className="signup-form" onSubmit={this.handleSubmit}>
                     <TextForm
                         placeholder="Your name"

@@ -48,6 +48,7 @@ export default class SearchGames extends Component {
           <div className="search">
             <h2>Search Results</h2>
             <section className="search-results container-grid">
+              <div className="row " >
               {this.state.searchResults.map((result) => (
                 <SearchCard
                   key={result.id}
@@ -55,7 +56,8 @@ export default class SearchGames extends Component {
                   rating={result.rating}
                   image={result.background_image}
                 />
-              ))}
+                ))}
+                </div>
             </section>
           </div>
         ) : null}

@@ -72,6 +72,7 @@ class AllGames extends Component {
           :
           <div>
             <h4> Current top 6 - Games by genre </h4>
+            <h6> Click on the titles, for more information and sign up/in to post and chat games.</h6>
             <div className="row ">
               {genreCards}
             </div>

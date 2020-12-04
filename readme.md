@@ -28,15 +28,19 @@ Don't feel like signing-up, you can still browse the games and review the inform
 ![wireframe](./img/GameInsider.png)
 
 ## Screenshots
-To follow ones app is done.
+Below screenshots of the current site:
+![screenshot1](./img/homepage.png)
+![screenshot2](./img/SignUp.png)
+![screenshot1](./img/genreGames.png)
 
 ## Code snippet
 Code Snippet of API
 ![code snippet](./img/codesnippet.png)
 
 ## Future Updates
-- Make search function for game by title.
-- Add user name to posts.
+- Search function for game by title - be able to click and find game details
+- Search function for game by title - abiliy to make a post on game
+- Add user names to posts.
 
 
 ## Credits

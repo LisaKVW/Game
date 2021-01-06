@@ -30,7 +30,7 @@ Don't feel like signing-up, you can still browse the games and review the inform
 ## Screenshots
 Below screenshots of the current site:
 ![screenshot1](./img/homepage.png)
-![screenshot2](./img/signUp.png)
+![screenshot2](./img/SignUp.png)
 ![screenshot1](./img/genreGames.png)
 
 ## Code snippet

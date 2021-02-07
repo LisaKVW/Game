@@ -5,7 +5,8 @@ Date: November 10, 2020
 By: Lisa Venneker Wand
 
 [GitHub](https://github.com/LisaKVW) |
-[LinkedIn](https://www.linkedin.com/in/lisa-venneker-wand-8413ab25/) 
+[LinkedIn](https://www.linkedin.com/in/lisa-venneker-wand-8413ab25/) | 
+[Game-Insider](https://game-insider.herokuapp.com/)
 
 ## Description
 Site to find the top 6 video games by genre.
